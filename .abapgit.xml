@@ -14,6 +14,15 @@
     <item>/.gitlab-ci.yml</item>
     <item>/abaplint.json</item>
     <item>/azure-pipelines.yml</item>
+    <item>/CatalogHanaBeerDB.tar.gz</item>
+    <item>/beer.csv</item>
+    <item>/beer_graph.sql</item>
+    <item>/breweries.csv</item>
+    <item>/breweries_geocode.csv</item>
+    <item>/categories.csv</item>
+    <item>/edge.csv</item>
+    <item>/styles.csv</item>
+    <item>/vertex.csv</item>
    </IGNORE>
   </DATA>
  </asx:values>
