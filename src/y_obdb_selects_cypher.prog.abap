@@ -31,11 +31,12 @@ CLASS app IMPLEMENTATION.
         DATA(sql) = NEW cl_sql_statement( con_ref = cl_sql_connection=>get_connection( 'HANACBA' ) ).
 
         DATA(statement) = |SELECT * FROM OPENCYPHER_TABLE( GRAPH WORKSPACE "CBA_BEER"."beer_graph" QUERY '| &&
-                          |  match (beer)-[e]->(brewery) | &&
-                          |  where beer.NAME starts with ''Alt'' | &&
-                          |  and e.TYPE = ''BREWED_AT'' | &&
-                          |  return brewery.NAME as brewery, beer.NAME as beer | &&
-                          |  order by brewery.NAME | &&
+                          |  match (beer1)-[e1]->(brewery) | &&
+                          |  match (beer2)-[e2]->(brewery) | &&
+                          |  where ( beer1.NAME = ''Alt'' or beer1.NAME = ''Altbier'' ) | &&
+                          |  and e1.TYPE = ''BREWED_AT''and e2.TYPE = ''BREWED_AT'' | &&
+                          |  return brewery.NAME as brewery, beer2.NAME as b2name | &&
+                          |  order by brewery.NAME, beer2.NAME | &&
                           |')|.
 
 
